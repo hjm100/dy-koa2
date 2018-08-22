@@ -4,22 +4,22 @@
   "description": "使用koa2搭建的node应用",
   "main": "serve.js",
   "scripts": {
-    "start": "node --harmony serve.js",
+    "start": "node serve.js",
     "dev": "pm2 flush&&pm2 startOrRestart pm2/dev_pm2.json&&pm2 log"
   },
   "author": "hjm100",
   "repository": {
     "type": "git",
-    "url": "git+https://gitee.com/hjmeng/dy-Koa2.git"
+    "url": "git+https://gitee.com/hjmeng/dy-koa2.git"
   },
   "keywords": [
     "node"
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://gitee.com/hjmeng/dy-Koa2"
+    "url": "https://gitee.com/hjmeng/dy-koa2"
   },
-  "homepage": "https://gitee.com/hjmeng/dy-Koa2",
+  "homepage": "https://gitee.com/hjmeng/dy-koa2",
   "dependencies": {
     "kcors": "^2.2.1",
     "koa": "^2.3.0",
