@@ -1,0 +1,47 @@
+{
+  "name": "dy-koa2",
+  "version": "1.0.0",
+  "description": "使用koa2搭建的node应用",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node --harmony serve.js",
+    "dev": "pm2 flush&&pm2 startOrRestart pm2/dev_pm2.json&&pm2 log"
+  },
+  "author": "hjm100",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/hjmeng/dy-Koa2.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitee.com/hjmeng/dy-Koa2"
+  },
+  "homepage": "https://gitee.com/hjmeng/dy-Koa2",
+  "dependencies": {
+    "kcors": "^2.2.1",
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-error": "^3.0.1",
+    "koa-etag": "^3.0.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.2.1"
+  },
+  "devDependencies": {
+    "async-busboy": "^0.6.2",
+    "is": "^3.2.1",
+    "jsonwebtoken": "^8.2.0",
+    "locutus": "^2.0.9",
+    "lodash": "^4.17.5",
+    "log4js": "^2.3.12",
+    "md5": "^2.2.1",
+    "mysql": "^2.15.0",
+    "koa-mysql-session": "^0.0.2",
+    "koa-session-minimal": "^3.0.4",
+    "pm2": "^3.0.0"
+  }
+}
