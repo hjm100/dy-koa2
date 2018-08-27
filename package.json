@@ -42,6 +42,6 @@
     "mysql": "^2.15.0",
     "koa-mysql-session": "^0.0.2",
     "koa-session-minimal": "^3.0.4",
-    "pm2": "^3.0.0"
+    "pm2": "^3.0.4"
   }
 }

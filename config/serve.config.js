@@ -1,6 +1,6 @@
 const config = {
     // 启动端口
-    port: 8080,
+    port: 8088,
     maxage : 30 * 60 * 1000
   }
   
