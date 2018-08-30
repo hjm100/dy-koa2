@@ -5,8 +5,6 @@ const bodyParser = require('koa-bodyparser');
 const koaBody = require('koa-body');
 const errorHandler = require('koa-error');
 const etag = require('koa-etag');
-const Tips = require('../utils/tips');
-const db = require('../db/index');
 //------------------------------------------------------//
 const app=new Koa(); //上为npm包 下为js文件
 // 使用表单解析中间件
