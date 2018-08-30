@@ -64,20 +64,17 @@ class Kluy extends Koa {
     //设置路由(封装服务)
     setRouters() {
         const _setRouters = (app) => {
-            const router = this.loader.loadRouter();
-            this.rou ={}
-            router.forEach((crl) => {
-                this.rou = Object.assign(crl.module(app),this.rou)
+            const routers =[]
+            this.loader.loadRouter().forEach((crl) => {
+                routers.push(...crl.module(app))
             })
             const serve = {};
             app.loader.loadService().forEach((service) => {
                 serve[service.name] = service.module;
             })
-            Object.keys(this.rou).forEach((key) => {
-                const [method, path] = key.split(' ');
-                app.router[method](path, async (ctx) => {
-                    const handler = this.rou[key];
-                    await handler(ctx, serve);
+            routers.forEach((r) => {
+                app.router[r.method](r.path, async (ctx) => {
+                    await r.action(ctx, serve);
                 })
             })
             return app.router.routes()

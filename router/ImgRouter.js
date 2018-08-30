@@ -1,6 +1,14 @@
 module.exports = (app) => {
-    return {
-        'post /bb': app.controller.ImgController.getImg,
-        'get /': app.controller.ImgController.getImgInfo
-    }
+    const Img = app.controller.ImgController;
+    return [{
+            path: "/",
+            method: "get",
+            action: Img.getImgInfo
+        },
+        {
+            path: "/bb",
+            method: "post",
+            action: Img.getImg
+        }
+    ]
 }
