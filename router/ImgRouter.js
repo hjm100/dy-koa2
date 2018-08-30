@@ -1,6 +1,6 @@
 module.exports = (app) => {
     return {
-        'get /bb': app.controller.ImgController.getImg,
-        'get /cc': app.controller.ImgController.getImgInfo
+        'post /bb': app.controller.ImgController.getImg,
+        'get /': app.controller.ImgController.getImgInfo
     }
 }
