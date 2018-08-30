@@ -11,7 +11,17 @@
       "max_memory_restart": "500M",
       "exec_mode": "fork",
       "watch": [
-        "/"
+        "config",
+        "controller",
+        "db",
+        "db_script",
+        "kluy",
+        "pm2",
+        "router",
+        "task_script",
+        "timed_task",
+        "utils",
+        "serve.js"
       ],
       "env": {
         "NODE_ENV": "production"

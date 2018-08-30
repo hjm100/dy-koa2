@@ -1,15 +1,9 @@
-const Koa=require('koa');
-const http = require('http');
-const bodyParser = require('koa-bodyparser');
-const koaBody = require('koa-body');
-const errorHandler = require('koa-error');
-const etag = require('koa-etag');
+const kluy = require('./kluy/core');
 const compress = require('koa-compress');
-const app=new Koa() //上为npm包 下为js文件
+const http = require('http');
 const config = require('./config/serve.config.js');
-const router = require('./router');
-app.use(koaBody());
 
+const app = new kluy();
 // 配置跨域
 app.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
@@ -20,18 +14,14 @@ app.use(async (ctx, next) => {
   await next();
 });
 
-// 使用表单解析中间件
-app.use(bodyParser())
-app.use(errorHandler());
-app.use(etag());
 // compressor
 app.use(compress({
-    filter: contentType => /text|javascript/i.test(contentType),
-    threshold: 2048
+  filter: contentType => /text|javascript/i.test(contentType),
+  threshold: 2048
 }));
 
 // 使用新建的路由文件
-router(app);
+app.setRouters();
 
 // 监听在1234
 http.createServer(app.callback()).listen(config.port);
