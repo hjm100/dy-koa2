@@ -6,6 +6,11 @@ module.exports = (app) => {
             path: "/user",
             method: "get",
             action: User.getUser
+        },
+        {
+            path: "/setAreaList",
+            method: "get",
+            action: User.setAreaList
         }
     ]
 }
